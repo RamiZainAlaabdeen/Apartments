@@ -15,33 +15,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
-
-
-
-    @FXML
-    private TextField txtId1;
-
-    @FXML
-    private TextField txtAdress;
-
-    @FXML
-    private TextField txtPrice;
-
-    @FXML
-    private ComboBox<String> comp;
-
-    @FXML
-    private Button btnAddApartment;
-
-    @FXML
-    private Button btnUpdateApartment1;
-
-    @FXML
-    private Button btnDeleteApartment11;
-
-
-
+public class UserController implements Initializable {
 
 
     @FXML
@@ -153,30 +127,7 @@ public class HelloController implements Initializable {
     @FXML
     public void onButtonClicked(ActionEvent e) throws Exception {
 
-        if (e.getSource().equals(btnAddApartment)) {
-
-            insertRecord();
-
-            txtId1.clear();
-            txtAdress.clear();
-            txtPrice.clear();
-
-        }else if (e.getSource().equals(btnUpdateApartment1)){
-
-            updateRecord();
-
-            txtId1.clear();
-            txtAdress.clear();
-            txtPrice.clear();
-
-        }else if (e.getSource().equals(btnDeleteApartment11)){
-
-            deleteRecord();
-            txtId1.clear();
-            txtAdress.clear();
-            txtPrice.clear();
-
-        }else if (e.getSource().equals(btnAcept)){
+        if (e.getSource().equals(btnAcept)){
 
             insertCustomer();
 
@@ -216,10 +167,10 @@ public class HelloController implements Initializable {
 
         }else if (e.getSource().equals(clearPayment)){
 
-             txtid22.clear();
-             txtDeposit.clear();
-             txtRemining.clear();
-             txtReport.clear();
+            txtid22.clear();
+            txtDeposit.clear();
+            txtRemining.clear();
+            txtReport.clear();
 
         }
 
@@ -288,68 +239,6 @@ public class HelloController implements Initializable {
     }
 
 
-
-
-    private void insertRecord(){
-
-
-        String id= txtId1.getText();
-        String address= txtAdress.getText();
-        String price= txtPrice.getText();
-        String status= (String) comp.getValue();
-
-
-        String query= " insert into Apartments values (" + id + ",'" +
-                address + "'," + price + ",'" + status + "'" + ") ";
-        executeQuery(query);
-        showApartments();
-
-        showCustomersStatusRented();
-        showCustomersStatusNotRented();
-
-    }
-
-
-    private void updateRecord(){
-
-        String id= txtId1.getText();
-        String address= txtAdress.getText();
-        String price= txtPrice.getText();
-        String status= (String) comp.getValue();
-
-
-        String query= " update Apartments Set address = '" +
-                address + "', price = " + price + " , status = '" + status + "'" + " WHERE Apartment_id = " + id + "" ;
-
-        executeQuery(query);
-        showApartments();
-
-        showCustomersStatusRented();
-        showCustomersStatusNotRented();
-
-    }
-
-
-
-    private void deleteRecord(){
-
-        String id= txtId1.getText();
-        String address= txtAdress.getText();
-        String price= txtPrice.getText();
-        String status= (String) comp.getValue();
-
-
-        String query= " DELETE FROM Apartments WHERE Apartment_id = " + id + "" ;
-
-        executeQuery(query);
-        showApartments();
-
-        showCustomersStatusRented();
-        showCustomersStatusNotRented();
-
-    }
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public ObservableList<Customers> getCustomersList(){
@@ -373,7 +262,7 @@ public class HelloController implements Initializable {
                         rs.getString("address"),
                         rs.getDouble("price"),
                         rs.getString("status")
-                      //  ,rs.getDouble("deposit")
+                        //  ,rs.getDouble("deposit")
                         ,rs.getDouble("remining"));
 
                 customersList.add(customers);
@@ -402,7 +291,7 @@ public class HelloController implements Initializable {
         AddressCol1.setCellValueFactory(new PropertyValueFactory<Customers, String>("address"));
         PricelCol1.setCellValueFactory(new PropertyValueFactory<Customers, Double>("price"));
         StatusCol1.setCellValueFactory(new PropertyValueFactory<Customers, String>("status"));
-       // Depositcol.setCellValueFactory(new PropertyValueFactory<Customers, Double>("deposit"));
+        // Depositcol.setCellValueFactory(new PropertyValueFactory<Customers, Double>("deposit"));
         Reminingcol.setCellValueFactory(new PropertyValueFactory<Customers, Double>("remining"));
 
 
@@ -414,8 +303,8 @@ public class HelloController implements Initializable {
     private void insertCustomer(){
 
         String query= " insert into Customers values (" + txtid2.getText() + ",'" + txtFirstName.getText() + "','" +
-               txtLastName.getText() + "'," + txtid21.getText() + ",'" + txtApartmentAdress.getText() + "',"
-             + txtApartmentPrice.getText()  + ",'"  + (String) comp2.getValue() +
+                txtLastName.getText() + "'," + txtid21.getText() + ",'" + txtApartmentAdress.getText() + "',"
+                + txtApartmentPrice.getText()  + ",'"  + (String) comp2.getValue() +
                 "'," + txtApartmentPrice.getText() + ") ";
 
 
@@ -477,6 +366,7 @@ public class HelloController implements Initializable {
 
         executeQuery(query);
 
+        System.out.println(query);
         showCustomers();
         showCustomersRemining();
 
@@ -524,7 +414,7 @@ public class HelloController implements Initializable {
 
 
 
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public Integer  getCustomersStatusNotRented() {
 
@@ -541,7 +431,7 @@ public class HelloController implements Initializable {
 
             while (rs.next()) {
 
-               count= rs.getInt(1);
+                count= rs.getInt(1);
 
 
             }
@@ -670,7 +560,7 @@ public class HelloController implements Initializable {
         txtReport.setText(String.valueOf(sb));
     }
 
- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

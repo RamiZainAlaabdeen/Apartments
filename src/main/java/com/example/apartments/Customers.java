@@ -147,16 +147,16 @@ public class Customers {
 
     @Override
     public String toString() {
-        return "Customer Details:" + '\n' +
-                "customer_id=  " + customer_id + '\n'+
-                "first_name=  " + first_name + '\n' +
-                "last_name=  " + last_name + '\n' +
+        return "Customer Details:" + '\n' + '\n' +
+                "Customer_id=  " + customer_id + '\n'+
+                "First_Name=  " + first_name + '\n' +
+                "Last_Name=  " + last_name + '\n' +
                 "Apartment_id=  " + Apartment_id +'\n'+
-                "address=  " + address + '\n' +
-                "price=  " + price + '\n' +
-                "status=  " + status + '\n' +
+                "Address=  " + address + '\n' +
+                "Price=  " + price + '\n' +
+                "Status=  " + status + '\n' +
               //  "deposit=" + h.getTxtDeposit().getText() + '\n'+
-                "deposit date=  " + java.time.LocalDate.now() + '\n'
+                "Deposit_Date=  " + java.time.LocalDate.now() + '\n'
 
                 ;
     }

@@ -38,11 +38,11 @@
         <columns>
             <TableColumn fx:id="idCol" text="ID">
             </TableColumn>
-            <TableColumn fx:id="AddressCol" text="Address">
+            <TableColumn fx:id="AddressCol" prefWidth="99.99998474121094" text="Address">
             </TableColumn>
-            <TableColumn fx:id="PricelCol" prefWidth="54.40000915527344" text="Price">
+            <TableColumn fx:id="PricelCol" prefWidth="48.0" text="Price">
             </TableColumn>
-            <TableColumn fx:id="StatusCol" prefWidth="106.40000915527344" text="Status">
+            <TableColumn fx:id="StatusCol" prefWidth="96.0" text="Status">
             </TableColumn>
         </columns>
       </TableView>
@@ -51,12 +51,12 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="394.0" layoutY="200.0" text="Apartment_Addres" />
-      <Label layoutX="402.0" layoutY="240.0" text="Apartment_Price" />
-      <Label layoutX="387.0" layoutY="95.0" text="Customer_first_name" />
-      <Label layoutX="384.0" layoutY="129.0" prefHeight="17.0" prefWidth="122.0" text="Customer_last_name" />
-      <Label layoutX="768.0" layoutY="97.0" text="Deposit" />
-      <Label layoutX="768.0" layoutY="176.0" text="Remining" />
+      <Label layoutX="384.0" layoutY="200.0" text="Apartment_Addres" />
+      <Label layoutX="384.0" layoutY="240.0" text="Apartment_Price" />
+      <Label layoutX="384.0" layoutY="97.0" text="Customer_first_name" />
+      <Label layoutX="385.0" layoutY="131.0" prefHeight="17.0" prefWidth="122.0" text="Customer_last_name" />
+      <Label layoutX="753.0" layoutY="97.0" text="Deposit" />
+      <Label layoutX="753.0" layoutY="176.0" text="Remining" />
 
       <TextField fx:id="txtApartmentAdress" layoutX="510.0" layoutY="196.0" prefHeight="25.0" prefWidth="152.0" />
       <TextField fx:id="txtApartmentPrice" layoutX="510.0" layoutY="236.0" prefHeight="25.0" prefWidth="152.0" />
@@ -83,11 +83,11 @@
       <TextField fx:id="txtId1" layoutX="101.0" layoutY="56.0" prefHeight="25.0" prefWidth="182.0" />
       <Button fx:id="btnUpdateApartment1" layoutX="120.0" layoutY="213.0" mnemonicParsing="false" onAction="#onButtonClicked" prefHeight="25.0" prefWidth="72.0" text="Update" />
       <Button fx:id="btnDeleteApartment11" layoutX="214.0" layoutY="213.0" mnemonicParsing="false" onAction="#onButtonClicked" prefHeight="25.0" prefWidth="72.0" text="Delete" />
-      <Label layoutX="394.0" layoutY="63.0" text="Customer_Id" />
+      <Label layoutX="387.0" layoutY="65.0" text="Customer_Id" />
       <TextField fx:id="txtid2" layoutX="510.0" layoutY="59.0" prefHeight="25.0" prefWidth="152.0" />
-      <Label layoutX="419.0" layoutY="165.0" text="Apartment_Id" />
+      <Label layoutX="384.0" layoutY="167.0" text="Apartment_Id" />
       <TextField fx:id="txtid21" layoutX="510.0" layoutY="161.0" prefHeight="25.0" prefWidth="152.0" />
-      <Label layoutX="459.0" layoutY="279.0" text="Status" />
+      <Label layoutX="387.0" layoutY="279.0" text="Status" />
       <ComboBox fx:id="comp2" layoutX="509.0" layoutY="275.0" prefHeight="25.0" prefWidth="152.0" value="Rented">
          <items>
             <FXCollections fx:factory="observableArrayList">
@@ -127,7 +127,7 @@
       <TextField fx:id="txtid22" layoutX="843.0" layoutY="54.0" prefHeight="25.0" prefWidth="152.0" />
       <Button fx:id="aceptPayment" layoutX="843.0" layoutY="131.0" mnemonicParsing="false" onAction="#onButtonClicked" prefHeight="25.0" prefWidth="72.0" text="Acept " />
       <Button fx:id="clearPayment" layoutX="924.0" layoutY="131.0" mnemonicParsing="false" onAction="#onButtonClicked" prefHeight="25.0" prefWidth="72.0" text="Clear" />
-      <TextArea fx:id="txtReport" layoutX="1015.0" layoutY="49.0" prefHeight="620.0" prefWidth="200.0">
+      <TextArea fx:id="txtReport" layoutX="1015.0" layoutY="49.0" prefHeight="566.0" prefWidth="200.0">
          <font>
             <Font size="14.0" />
          </font></TextArea>
@@ -136,6 +136,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
+      <Button layoutX="1015.0" layoutY="626.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="99.0" text="Print Report" />
 
 
    </children>
